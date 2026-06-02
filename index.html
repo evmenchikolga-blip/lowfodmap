@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Low FODMAP протокол — меню на 14 дней</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F5F0E8;
+    --beige: #EDE5D4;
+    --beige-dark: #D9CCBA;
+    --brown: #8B6F5C;
+    --brown-dark: #5C4033;
+    --moss: #6B7A5A;
+    --moss-light: #8E9E7A;
+    --moss-pale: #E8EDE0;
+    --text-main: #3A2E27;
+    --text-muted: #7A6A60;
+    --text-light: #A89888;
+    --white: #FDFAF5;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    background: var(--cream);
+    color: var(--text-main);
+    line-height: 1.75;
+    font-size: 16px;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--beige);
+    padding: 72px 24px 64px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--beige-dark);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: var(--moss-pale);
+    opacity: 0.5;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    background: var(--beige-dark);
+    opacity: 0.4;
+  }
+
+  .hero-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+
+  .hero-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--moss);
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(32px, 7vw, 52px);
+    line-height: 1.15;
+    color: var(--brown-dark);
+    margin-bottom: 12px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--moss);
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    font-weight: 300;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--brown);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  /* SECTION */
+  .section {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 64px 24px;
+  }
+
+  .section-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--beige-dark);
+    margin: 0 auto 48px;
+  }
+
+  /* PAIN BLOCK */
+  .pain-block {
+    background: var(--white);
+    border-left: 3px solid var(--moss-light);
+    padding: 32px 28px;
+    margin-bottom: 32px;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .pain-block p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--brown-dark);
+    line-height: 1.6;
+  }
+
+  /* STORY */
+  .story-text {
+    font-size: 16px;
+    color: var(--text-main);
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+
+  .story-text strong {
+    font-weight: 500;
+    color: var(--brown-dark);
+  }
+
+  .story-break {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    color: var(--beige-dark);
+    margin: 32px 0;
+    letter-spacing: 0.2em;
+  }
+
+  /* CHECKLIST */
+  .checklist {
+    list-style: none;
+    background: var(--moss-pale);
+    border-radius: 12px;
+    padding: 32px 28px;
+    margin: 32px 0;
+  }
+
+  .checklist li {
+    padding: 8px 0 8px 28px;
+    position: relative;
+    font-size: 15px;
+    color: var(--text-main);
+    border-bottom: 1px solid rgba(107, 122, 90, 0.15);
+  }
+
+  .checklist li:last-child { border-bottom: none; }
+
+  .checklist li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 15px;
+    width: 14px;
+    height: 1px;
+    background: var(--moss);
+  }
+
+  /* SECTION TITLE */
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--moss);
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(26px, 5vw, 38px);
+    font-weight: 300;
+    color: var(--brown-dark);
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+
+  .section-title em { font-style: italic; color: var(--moss); }
+
+  /* WHAT'S INSIDE */
+  .inside-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 32px 0;
+  }
+
+  .inside-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: var(--white);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid var(--beige-dark);
+  }
+
+  .inside-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--beige);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--brown);
+  }
+
+  .inside-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--brown-dark);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .inside-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* FAQ */
+  .faq-item {
+    border-bottom: 1px solid var(--beige-dark);
+    padding: 24px 0;
+  }
+
+  .faq-q {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--brown-dark);
+    margin-bottom: 10px;
+  }
+
+  .faq-a {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* PRICE */
+  .price-block {
+    background: var(--beige);
+    border-radius: 16px;
+    padding: 48px 32px;
+    text-align: center;
+    margin: 0;
+    border: 1px solid var(--beige-dark);
+  }
+
+  .price-old {
+    font-size: 18px;
+    color: var(--text-light);
+    text-decoration: line-through;
+    margin-bottom: 6px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+  }
+
+  .price-badge {
+    display: inline-block;
+    background: var(--moss);
+    color: #fff;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+
+  .price-current {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    font-weight: 400;
+    color: var(--brown-dark);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .price-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    line-height: 1.6;
+  }
+
+  .cta-btn {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    background: var(--brown-dark);
+    color: #FDFAF5;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 18px 32px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .cta-btn:hover {
+    background: var(--brown);
+    transform: translateY(-1px);
+  }
+
+  .cta-note {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-top: 16px;
+  }
+
+  /* OFERTA */
+  .oferta-section {
+    background: var(--beige);
+    border-top: 1px solid var(--beige-dark);
+  }
+
+  .oferta-toggle {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    display: block;
+    margin: 0 auto 16px;
+    text-align: center;
+  }
+
+  .oferta-content {
+    display: none;
+    max-height: 400px;
+    overflow-y: auto;
+    background: var(--white);
+    border-radius: 8px;
+    padding: 24px;
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    border: 1px solid var(--beige-dark);
+  }
+
+  .oferta-content.open { display: block; }
+
+  .oferta-content h3 {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-main);
+    margin: 16px 0 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .oferta-content h3:first-child { margin-top: 0; }
+
+  /* IMAGE PLACEHOLDERS */
+  .img-block {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 32px 0;
+    background: var(--beige);
+    aspect-ratio: 16/9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .img-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 32px 24px;
+    font-size: 12px;
+    color: var(--text-light);
+    border-top: 1px solid var(--beige-dark);
+  }
+
+  /* DECORATIVE */
+  .leaf-divider {
+    text-align: center;
+    color: var(--moss-light);
+    font-size: 22px;
+    margin: 40px 0;
+    letter-spacing: 12px;
+    opacity: 0.6;
+  }
+
+  .highlight-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(20px, 4vw, 28px);
+    font-style: italic;
+    color: var(--brown);
+    text-align: center;
+    padding: 40px 24px;
+    line-height: 1.5;
+    border-top: 1px solid var(--beige-dark);
+    border-bottom: 1px solid var(--beige-dark);
+    margin: 48px 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Гайд по питанию</p>
+    <h1>Low FODMAP протокол<br>для <em>чувствительного</em> ЖКТ</h1>
+    <p class="hero-subtitle">Меню на 14 дней + полный этап реинтродукции.<br>За тебя уже всё продумано.</p>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-number">54</div>
+        <div class="stat-label">страницы</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">77</div>
+        <div class="stat-label">рецептов</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">14</div>
+        <div class="stat-label">дней меню</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAIN -->
+<div class="section">
+  <div class="pain-block">
+    <p>Ты когда-нибудь отказывалась от встречи, потому что боялась, что живот предаст тебя в самый неподходящий момент?</p>
+  </div>
+  <div class="pain-block">
+    <p>Или надевала одежду на размер больше, потому что к вечеру живот раздувало так, будто ты беременна — хотя с утра всё было нормально?</p>
+  </div>
+  <div class="pain-block">
+    <p>Или ела «правильную» еду — салаты, овощи — и получала в ответ такое вздутие, что хотелось просто лечь и не двигаться?</p>
+  </div>
+  <p class="story-text" style="text-align:center; margin-top: 32px;">
+    <strong>Я понимаю тебя. Потому что я была именно там.</strong>
+  </p>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- STORY -->
+<div class="section" style="padding-top: 0;">
+  <span class="section-label" style="text-align:center; display:block;">Моя история</span>
+  <h2 class="section-title" style="text-align:center;">Несколько лет я <em>не понимала правил игры</em></h2>
+
+  <p class="story-text">Несколько лет меня мучил постоянный сильный метеоризм. Не иногда. Не после определённой еды. <strong>Всегда.</strong></p>
+
+  <p class="story-text">Я убрала лактозу — не помогло. Убрала глютен — не помогло. Перестала есть жирное — не помогло.</p>
+
+  <p class="story-text">Я пошла к гастроэнтерологу с надеждой наконец получить ответ. Получила диагноз СРК и листочек со списком продуктов. <strong>Список был таким коротким и общим, что я вышла из кабинета с ещё большим количеством вопросов, чем до него.</strong></p>
+
+  <p class="story-text">Я честно сидела на классическом Low FODMAP три недели. Одно и то же блюдо сегодня не давало реакции — завтра давало бурную. Я не понимала правил игры. Казалось, мой кишечник живёт по своим законам, которые мне никто не объяснил.</p>
+
+  <div class="img-block">
+    <img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?w=800&q=80&fit=crop" alt="Здоровые продукты" loading="lazy">
+  </div>
+
+  <p class="story-text">Я начала копать сама. Нутрициологи, гастроэнтерологи, исследования, форумы. Постепенно я поняла: <strong>классический список Low FODMAP — это только верхушка айсберга.</strong> Есть целый пласт продуктов-триггеров, которые в стандартный протокол не входят, но у многих людей вызывают именно ту самую реакцию.</p>
+
+  <p class="story-text">Я составила собственный расширенный список. Добавила добавки, которые помогают снизить воспаление. И начала снова.</p>
+
+  <div class="highlight-quote">«Первые две недели я почти сдалась. Но решила продержаться месяц. На третьей неделе что-то изменилось.»</div>
+
+  <p class="story-text">К концу четвёртой недели — я впервые за несколько лет <strong>не думала о своём животе.</strong> Не боялась выйти из дома. Не переживала о том, как буду есть в гостях.</p>
+
+  <p class="story-text">Этап реинтродукции показал мне мои личные триггеры. Картофель — разрешённый в классическом протоколе — давал мне сильнейшую реакцию. Я никогда не узнала бы этого без системного подхода.</p>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- УЗНАВАНИЕ -->
+<div class="section" style="padding-top: 0;">
+  <span class="section-label" style="text-align:center; display:block;">Ты знаешь это чувство</span>
+  <h2 class="section-title" style="text-align:center;">Если ты читаешь это —<br><em>ты знаешь, как это</em></h2>
+
+  <ul class="checklist">
+    <li>Просыпаться с плоским животом и к обеду выглядеть на пятом месяце</li>
+    <li>Бояться есть в гостях или в ресторане — а вдруг живот среагирует при всех</li>
+    <li>Часами изучать составы продуктов и всё равно ошибаться</li>
+    <li>Стесняться своего тела, хотя ты всё делаешь «правильно»</li>
+    <li>Сидеть на очередной диете — и снова не видеть результата</li>
+    <li>Готовить одно и то же блюдо, и каждый раз получать разную реакцию</li>
+  </ul>
+
+  <p class="story-text" style="text-align: center; font-style: italic; color: var(--brown);">
+    Это не потому что ты что-то делаешь не так.<br>
+    Это потому что у тебя не было правильной системы.
+  </p>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- РЕШЕНИЕ -->
+<div class="section" style="padding-top: 0;">
+  <span class="section-label" style="text-align:center; display:block;">Решение</span>
+  <h2 class="section-title" style="text-align:center;">Я сделала для тебя то,<br><em>чего не было у меня</em></h2>
+
+  <p class="story-text">Когда мне наконец стало лучше, я поняла одно: я бы <strong>отдала много, чтобы в начале этого пути кто-то дал мне просто готовый план.</strong></p>
+
+  <p class="story-text">Без поиска информации по крупицам. Без страха съесть что-то не то и обнулить месяц работы. Без ежедневного вопроса «а что мне вообще есть сегодня».</p>
+
+  <p class="story-text">Именно поэтому я создала гайд. Не просто список разрешённых продуктов — а <strong>полный пошаговый протокол,</strong> который ведёт тебя за руку от первого дня до полного восстановления.</p>
+
+  <div class="img-block">
+    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80&fit=crop" alt="Здоровое питание" loading="lazy">
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ЧТО ВНУТРИ -->
+<div class="section" style="padding-top: 0;">
+  <span class="section-label" style="text-align:center; display:block;">Содержание</span>
+  <h2 class="section-title" style="text-align:center;">Что ты <em>получишь</em></h2>
+
+  <div class="inside-grid">
+    <div class="inside-item">
+      <div class="inside-icon">14</div>
+      <div>
+        <div class="inside-title">Готовое меню на 14 дней</div>
+        <div class="inside-desc">Завтрак, обед, ужин и перекусы — все ингредиенты с граммами. Остаётся только пойти в магазин.</div>
+      </div>
+    </div>
+    <div class="inside-item">
+      <div class="inside-icon">77</div>
+      <div>
+        <div class="inside-title">77 рецептов</div>
+        <div class="inside-desc">Простые, вкусные, с конкретными пропорциями. Никаких «по вкусу» и «горсть».</div>
+      </div>
+    </div>
+    <div class="inside-item">
+      <div class="inside-icon">✦</div>
+      <div>
+        <div class="inside-title">Расширенный список триггеров</div>
+        <div class="inside-desc">Включает скрытые триггеры, которых нет в классическом Low FODMAP — именно они чаще всего мешают увидеть результат.</div>
+      </div>
+    </div>
+    <div class="inside-item">
+      <div class="inside-icon">○</div>
+      <div>
+        <div class="inside-title">Схема добавок</div>
+        <div class="inside-desc">Какие БАДы помогают снизить воспаление и ускорить восстановление кишечника — с пояснениями и дозировками.</div>
+      </div>
+    </div>
+    <div class="inside-item">
+      <div class="inside-icon">→</div>
+      <div>
+        <div class="inside-title">Полный гайд по реинтродукции</div>
+        <div class="inside-desc">В каком порядке вводить продукты, что именно тестировать и как не обнулить результат. Рецепты для этого этапа — тоже внутри.</div>
+      </div>
+    </div>
+    <div class="inside-item">
+      <div class="inside-icon">54</div>
+      <div>
+        <div class="inside-title">54 страницы полезной информации</div>
+        <div class="inside-desc">Всё в одном месте: теория, практика, меню, рецепты, добавки. Открыл — и всё понятно.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- FAQ -->
+<div class="section" style="padding-top: 0;">
+  <span class="section-label" style="text-align:center; display:block;">Вопросы</span>
+  <h2 class="section-title" style="text-align:center;">Ты можешь <em>сомневаться</em></h2>
+
+  <div class="faq-item">
+    <div class="faq-q">«Я уже пробовала Low FODMAP — не помогло»</div>
+    <div class="faq-a">Классический протокол неполный. Этот гайд основан на расширенном списке триггеров, которого нет в стандартных источниках — именно это чаще всего и мешает получить результат.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">«А вдруг это мне не подойдёт?»</div>
+    <div class="faq-a">Гайд подходит тем, кто страдает от вздутия, газов и нестабильной работы ЖКТ — независимо от того, есть у тебя диагноз СРК или нет.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">«Это сложно соблюдать?»</div>
+    <div class="faq-a">Именно поэтому я сделала готовое меню — чтобы тебе не нужно было думать. Открыла, посмотрела, приготовила. Всё уже решено.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">«Нужно ли сначала идти к врачу?»</div>
+    <div class="faq-a">Гайд не заменяет консультацию специалиста и не является медицинскими рекомендациями. Это информационный продукт, основанный на личном опыте и изученных источниках. При серьёзных симптомах лучше проконсультироваться с врачом.</div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- PRICE -->
+<div class="section" style="padding-top: 0;">
+  <div class="price-block">
+    <div class="price-badge">Специальная цена</div>
+    <div class="price-old">3 200 ₽</div>
+    <div class="price-current">1 490 ₽</div>
+    <div class="price-desc">
+      Единоразовая оплата. Файл остаётся у тебя навсегда.<br>
+      Мгновенная доставка на email после оплаты.
+    </div>
+    <a href="#" class="cta-btn">Получить гайд</a>
+    <p class="cta-note">Нажимая кнопку, вы соглашаетесь с <button onclick="document.getElementById('oferta-text').classList.toggle('open')" style="background:none;border:none;padding:0;cursor:pointer;font-size:12px;color:var(--text-muted);text-decoration:underline;font-family:'Jost',sans-serif;">условиями публичной оферты</button></p>
+  </div>
+</div>
+
+<!-- OFERTA -->
+<div class="oferta-section">
+  <div class="section" style="padding: 40px 24px;">
+    <button class="oferta-toggle" onclick="document.getElementById('oferta-text').classList.toggle('open')">
+      Публичная оферта — условия договора
+    </button>
+    <div class="oferta-content" id="oferta-text">
+      <h3>Публичная оферта о заключении договора информационно-консультативных услуг</h3>
+      <p>Настоящей офертой признается предложение, адресованное одному или нескольким конкретным лицам, которое достаточно определенно и выражает намерение лица, сделавшего предложение, считать себя заключившим Договор с адресатом, которым будет принято предложение.</p>
+      <h3>1. Общие положения</h3>
+      <p>В настоящей Публичной оферте содержатся условия заключения Договора информационно-консультативных услуг. Договор считается заключенным и приобретает силу с момента совершения Сторонами действий, предусмотренных в настоящей Оферте.</p>
+      <h3>2. Предмет договора</h3>
+      <p>Исполнитель обязуется оказать Заказчику информационно-консультационные услуги, а Заказчик обязуется оплатить их в размере, порядке и сроки, установленные настоящим Договором. Акцепт настоящей Оферты выражается в оплате услуг Заказчиком.</p>
+      <h3>3. Права и обязанности сторон</h3>
+      <p>Исполнитель обязуется оказать услуги в надлежащем качестве. Заказчик обязуется своевременно произвести оплату и предоставить необходимую информацию. Заказчик имеет право осуществлять контроль за ходом оказания услуг, не вмешиваясь в деятельность Исполнителя.</p>
+      <h3>4. Стоимость и порядок расчётов</h3>
+      <p>Стоимость услуг определяется на сайте Исполнителя. Все расчёты производятся в безналичном порядке. Возврат денежных средств осуществляется в соответствии с законодательством РФ (Закон о защите прав потребителей от 07.02.1992 №2300-1). Срок ответа на претензию — 10 рабочих дней.</p>
+      <h3>5. Конфиденциальность</h3>
+      <p>При реализации настоящего Договора Стороны обеспечивают конфиденциальность и безопасность персональных данных в соответствии с ФЗ от 27.07.2006 г. № 152-ФЗ «О персональных данных».</p>
+      <h3>6. Форс-мажор</h3>
+      <p>Стороны освобождаются от ответственности за неисполнение обязательств, если надлежащее исполнение оказалось невозможным вследствие непреодолимой силы (стихийные бедствия, запретные действия властей, эпидемии и т.д.).</p>
+      <h3>7. Ответственность сторон</h3>
+      <p>В случае неисполнения обязательств по Договору, Стороны несут ответственность в соответствии с законодательством Российской Федерации.</p>
+      <h3>8. Срок действия оферты</h3>
+      <p>Оферта вступает в силу с момента её размещения и действует до момента её отзыва Исполнителем. Договор действует до полного исполнения Сторонами обязательств.</p>
+      <h3>Реквизиты исполнителя</h3>
+      <p>ИП Евменчик Ольга Сергеевна<br>
+      ИНН: 222261679928<br>
+      ОГРНИП: 321220200278565<br>
+      Телефон: +7 913 248-38-09<br>
+      Email: o.evmenchik@list.ru</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2024 Евменчик Ольга Сергеевна · ИНН 222261679928</p>
+  <p style="margin-top: 6px;">Данный продукт является информационным и не заменяет консультацию врача</p>
+</footer>
+
+</body>
+</html>
